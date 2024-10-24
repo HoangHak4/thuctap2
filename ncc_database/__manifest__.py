@@ -1,0 +1,20 @@
+{
+    'name': 'ncc',
+    'version': '1.0',
+    'summary': 'Summary',
+    'description': 'Description',
+    'category': 'Category',
+    'author': 'Author',
+    'website': 'Website',
+    'license': 'LGPL-3',
+    'depends': [],
+    'data': [
+        'views/tieu_chi_danh_gia_views.xml',
+        'views/danh_gia_nha_cung_cap_views.xml',
+        'views/menu_ncc.xml',
+        'views/thong_tin_nha_cc.xml',
+             ],
+    'demo': [],
+    'installable': True,
+    'auto_install': False,
+}

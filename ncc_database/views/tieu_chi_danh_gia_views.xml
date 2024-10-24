@@ -1,0 +1,40 @@
+<odoo>
+
+    <record id="view_tieu_chi_danh_gia_form" model="ir.ui.view">
+        <field name="name">tieu.chi.danh.gia.form</field>
+        <field name="model">tieu.chi.danh.gia</field>
+        <field name="arch" type="xml">
+            <form string="Tiêu chí đánh giá">
+                <sheet>
+                    <group>
+                        <field name="ma_tc" string="Mã tiêu chí"/>
+                        <field name="ten_tc" string="Tên tiêu chí"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_tieu_chi_danh_gia_tree" model="ir.ui.view">
+        <field name="name">tieu.chi.danh.gia.tree</field>
+        <field name="model">tieu.chi.danh.gia</field>
+        <field name="arch" type="xml">
+            <tree string="Tiêu chí đánh giá">
+                <field name="ma_tc"/>
+                <field name="ten_tc"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="action_tieu_chi_danh_gia" model="ir.actions.act_window">
+        <field name="name">Tiêu chí đánh giá</field>
+        <field name="res_model">tieu.chi.danh.gia</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+<!--    <menuitem id="menu_tieu_chi_danh_gia_pr" name="Tiêu Chí Đánh Giá" sequence="1"/>-->
+<!--    <menuitem id="menu_tieu_chi_danh_gia" name="Tiêu chí đánh giá" sequence="1" parent="menu_tieu_chi_danh_gia_pr" action="action_tieu_chi_danh_gia"/>-->
+</odoo>

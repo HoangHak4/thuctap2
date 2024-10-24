@@ -1,0 +1,79 @@
+<odoo>
+    <!-- View cho model Nhà cung cấp -->
+    <record id="view_nha_cung_cap_form" model="ir.ui.view">
+        <field name="name">nha.cung.cap.form</field>
+        <field name="model">nha.cung.cap</field>
+        <field name="arch" type="xml">
+            <form string="Nhà Cung Cấp">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="ten_ncc" string="Tên nhà cung cấp" required="1"/>
+                            <field name="ma_phieu" string="Mã phiếu"/>
+                            <field name="email" string="Email"/>
+                            <field name="dien_thoai" string="Điện thoại"/>
+                            <field name="nganh_kd" string="Ngành kinh doanh"/>
+                        </group>
+                        <group>
+                            <field name="ky_dg" string="Kỳ đánh giá"/>
+                            <field name="ngay_dg" string="Ngày đánh giá"/>
+                            <field name="quan_ly" string="Quản lý"/>
+                            <field name="trang_thai" string="Trạng thái"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+        <record id="view_nha_cung_cap_tree" model="ir.ui.view">
+            <field name="name">nha.cung.cap.tree</field>
+            <field name="model">nha.cung.cap</field>
+            <field name="arch" type="xml">
+                <tree string="Nhà Cung Cấp">
+                    <field name="ten_ncc" />
+                    <field name="ma_phieu"/>
+                    <field name="email"/>
+                    <field name="dien_thoai" />
+                    <field name="nganh_kd" />
+                    <field name="ky_dg"/>
+                    <field name="ngay_dg" />
+                    <field name="quan_ly"/>
+                    <field name="trang_thai" />
+                </tree>
+            </field>
+        </record>
+
+
+
+
+    <record id="view_chi_tiet_danh_gia_ncc_form" model="ir.ui.view">
+        <field name="name">chi.tiet.danh.gia.ncc.form</field>
+        <field name="model">ct.danh.gia.ncc</field>
+        <field name="arch" type="xml">
+            <form string="Chi Tiết Đánh Giá Nhà Cung Cấp">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="nha_cung_cap_id" string="Nhà cung cấp" required="1"/>
+                            <field name="tieu_chi_dg" string="Tiêu chí đánh giá" required="1"/>
+                            <field name="da_duoc_dg" string="Đã được đánh giá"/>
+                        </group>
+                        <group>
+                            <field name="diem_dg" string="Điểm đánh giá" required="1"/>
+                            <field name="tong_diem_cuoi_cung" string="Tổng điểm cuối cùng"/>
+                        </group>
+                        <group>
+                            <field name="kq_danh_gia" string="Kết quả đánh giá"/>
+                            <field name="thong_tin_phan_hoi" string="Thông tin phản hồi"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
+

@@ -1,0 +1,8 @@
+<odoo>
+    <record id="nha_cung_cap_sequence" model="ir.sequence">
+        <field name="name">Nhà cung cấp</field>
+        <field name="code">nha.cung.cap.sequence</field>
+        <field name="prefix">DCNCC</field>
+        <field name="padding">4</field>
+    </record>
+</odoo>
