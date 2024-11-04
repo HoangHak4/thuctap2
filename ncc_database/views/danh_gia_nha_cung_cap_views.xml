@@ -20,10 +20,35 @@
                             <field name="quan_ly" string="Quản lý"/>
                             <field name="trang_thai" string="Trạng thái"/>
                         </group>
+
+                        <group>
+                        <field name="chi_tiet_danh_gia_ids" string="Chi Tiết Đánh Giá" context="{'form_view_initial_mode': 'edit'}">
+                            <tree editable="bottom">
+                                <field name="tieu_chi_dg" string="Tiêu chí đánh giá" required="1"/>
+                            </tree>
+                        </field>
+                        </group>
                     </group>
                 </sheet>
             </form>
         </field>
+
+<!--         <field name="name">chi.tiet.danh.gia.ncc.form</field>-->
+<!--        <field name="model">ct.danh.gia.ncc</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form string="Chi Tiết Đánh Giá Nhà Cung Cấp">-->
+<!--                <sheet>-->
+<!--                    <group>-->
+<!--                        <group>-->
+
+<!--                            <field name="tieu_chi_dg" string="Tiêu chí đánh giá" required="1"/>-->
+
+<!--                        </group>-->
+<!--                    </group>-->
+<!--                </sheet>-->
+<!--            </form>-->
+<!--        </field>-->
+
     </record>
 
 
@@ -44,36 +69,7 @@
                     <field name="trang_thai" />
                 </tree>
             </field>
+
         </record>
-
-
-
-
-    <record id="view_chi_tiet_danh_gia_ncc_form" model="ir.ui.view">
-        <field name="name">chi.tiet.danh.gia.ncc.form</field>
-        <field name="model">ct.danh.gia.ncc</field>
-        <field name="arch" type="xml">
-            <form string="Chi Tiết Đánh Giá Nhà Cung Cấp">
-                <sheet>
-                    <group>
-                        <group>
-                            <field name="nha_cung_cap_id" string="Nhà cung cấp" required="1"/>
-                            <field name="tieu_chi_dg" string="Tiêu chí đánh giá" required="1"/>
-                            <field name="da_duoc_dg" string="Đã được đánh giá"/>
-                        </group>
-                        <group>
-                            <field name="diem_dg" string="Điểm đánh giá" required="1"/>
-                            <field name="tong_diem_cuoi_cung" string="Tổng điểm cuối cùng"/>
-                        </group>
-                        <group>
-                            <field name="kq_danh_gia" string="Kết quả đánh giá"/>
-                            <field name="thong_tin_phan_hoi" string="Thông tin phản hồi"/>
-                        </group>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
-
 </odoo>
 

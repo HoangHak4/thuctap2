@@ -6,7 +6,8 @@
           <field name="view_mode">tree,form</field>
         </record>
 
-         <menuitem id="menu_nha_cung_cap" name="Nhà cung cấp" sequence="10" parent="base.menu_custom" action="action_nha_cung_cap"/>
+<!-- <menuitem id="menu_nha_cung_cap" name="Nhà cung cấp" sequence="10" parent="base.menu_custom" action="action_nha_cung_cap"/>-->
+
 
 
          <menuitem id="ncc_menu" name="Nhà cung cấp" sequence="10" />
@@ -15,7 +16,6 @@
         <menuitem id="menu_tieu_chi_danh_gia" name="Tiêu chí đánh giá" sequence="1" parent="ncc_menu" action="action_tieu_chi_danh_gia"/>
 
         <menuitem id="menu_nha_cung_cap" name="Nhà cung cấp" sequence="10" parent="ncc_menu" action="action_nha_cung_cap"/>
-
 
         <menuitem id="menu_thong_tin_ncc" name="Thông tin nhà cung cấp" parent="ncc_menu" action="action_thong_tin_ncc" sequence="10"/>
     </data>

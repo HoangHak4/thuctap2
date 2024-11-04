@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 class NhaCungCap(models.Model):
     _name = 'nha.cung.cap'
@@ -20,5 +20,12 @@ class NhaCungCap(models.Model):
         ('cancelled', 'Huỷ')
     ], string='Trạng thái', default='draft')
 
-    # danh_gia_ids = fields.One2many('ct.danh.gia.ncc', 'nha_cung_cap_id', string='Đánh giá nhà cung cấp')
+    chi_tiet_danh_gia_ids = fields.One2many('ct.danh.gia.ncc', 'nha_cung_cap_id', string='Chi Tiết Đánh Giá')
 
+    @api.depends('chi_tiet_danh_gia_ids.diem_dg')
+    def _compute_total_score(self):
+        for record in self:
+            total_score = sum(record.chi_tiet_danh_gia_ids.mapped('diem_dg'))
+            record.tong_diem_cuoi_cung = total_score
+
+    tong_diem_cuoi_cung = fields.Float(string='Tổng điểm cuối cùng', compute='_compute_total_score', store=True)

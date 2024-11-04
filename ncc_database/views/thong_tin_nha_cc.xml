@@ -7,6 +7,7 @@
                 <form string="Thông tin nhà cung cấp">
                     <sheet>
                         <group>
+                        <group>
                             <field name="ten_ncc" />
                             <field name="dia_chi" />
                             <field name="email" />
@@ -19,6 +20,7 @@
                             <field name="danh_gia_cuoi_cung" />
                             <field name="danh_gia_moi" widget="text" />
                         </group>
+                         </group>
                     </sheet>
                 </form>
             </field>
@@ -39,10 +41,9 @@
             </field>
         </record>
 
-        <record id="action_thong_tin_ncc" model="ir.actions.act_window">
+         <record id="action_thong_tin_ncc" model="ir.actions.act_window">
             <field name="name">Thông tin nhà cung cấp</field>
-            <field name="res_model">thong.tin.ncc</field>
-            <field name="view_type">form</field>
+            <field name="res_model">thong.tin.ncc</field> <!-- Đảm bảo model này tồn tại -->
             <field name="view_mode">tree,form</field>
         </record>
     </data>

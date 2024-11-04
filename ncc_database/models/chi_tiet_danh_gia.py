@@ -5,8 +5,8 @@ class ChiTietDanhGiaNCC(models.Model):
     _name = 'ct.danh.gia.ncc'
     _description = 'Chi tiết đánh giá nhà cung cấp'
 
-    # nha_cung_cap_id = fields.Many2one('nha.cung.cap', string='Nhà cung cấp')
-    tieu_chi_dg = fields.Many2one('tieu.chi.dg', string='Tiêu chí đánh giá')
+    nha_cung_cap_id = fields.Many2one('nha.cung.cap', string="Nhà Cung Cấp")
+    tieu_chi_dg = fields.Many2one('tieu.chi.danh.gia', string='Tiêu chí đánh giá')
     da_duoc_dg = fields.Boolean(string='Đã được đánh giá', default=False)
     diem_dg = fields.Selection([
         ('1', '1 sao'),
