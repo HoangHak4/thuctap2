@@ -13,6 +13,7 @@
         'views/crm_customer_request_menu.xml',
         'views/crm_customer_request_form.xml',
         'views/crm_lead_form.xml',
+        'data/email_template.xml',
     ],
     'demo': [],
     'installable': True,

@@ -30,6 +30,32 @@ class CrmLead(models.Model):
         for lead in self:
             lead.expected_revenue = sum(request.qty * request.product_id.list_price for request in lead.request_ids)
 
+    def create_sale_order_from_leads(self):
+        for lead in self:
+            # Tạo Sale Order từ Lead
+            sale_order = self.env['sale.order'].create({
+                'partner_id': lead.partner_id.id,
+                'date_order': fields.Datetime.now(),
+                'opportunity_id': lead.id,
+            })
+
+            # Thêm sản phẩm vào Sale Order
+        for request in lead.request_ids:
+            self.env['sale.order.line'].create({
+                'order_id': sale_order.id,
+                'product_id': request.product_id.id,
+                'product_uom_qty': request.qty,
+                'price_unit': request.product_id.list_price,
+                })
+
+        return True
+
+    def send_confirmation_email(self):
+        template = self.env.ref('your_module.email_template_confirmation')
+        if template:
+            self.env['mail.template'].browse(template.id).send_mail(self.id, force_send=True)
+
+
     # Giới hạn quyền thêm, sửa, xóa yêu cầu chỉ cho phép ở trạng thái "Mới"
     @api.model
     def create(self, vals):

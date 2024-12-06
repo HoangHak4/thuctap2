@@ -1,4 +1,17 @@
 <odoo>
+    <record id="view_crm_lead_tree" model="ir.ui.view">
+        <field name="name">crm.lead.tree</field>
+        <field name="model">crm.lead</field>
+        <field name="arch" type="xml">
+            <tree string="Leads">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="stage_id"/>
+                <field name="expected_revenue"/>
+            </tree>
+        </field>
+    </record>
+
     <record id="view_crm_lead_form" model="ir.ui.view">
         <field name="name">crm.lead.form</field>
         <field name="model">crm.lead</field>
@@ -29,10 +42,18 @@
 
                     <footer>
                         <button name="action_create_quotation" type="object" string="Create Quotation" class="oe_highlight"/>
+                        <button name="create_sale_order_from_leads" type="object" string="Create Sale Order" class="oe_highlight"/>
+                        <button name="send_confirmation_email" type="object" string="Send Confirmation Email" class="oe_highlight"/>
                     </footer>
-
                 </sheet>
             </form>
         </field>
+    </record>
+
+    <record id="action_crm_lead" model="ir.actions.act_window">
+        <field name="name">Leads</field>
+        <field name="res_model">crm.lead</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_crm_lead_tree"/>
     </record>
 </odoo>
