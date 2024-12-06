@@ -1,0 +1,38 @@
+<odoo>
+    <record id="view_crm_lead_form" model="ir.ui.view">
+        <field name="name">crm.lead.form</field>
+        <field name="model">crm.lead</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="company_id"/>
+                        <field name="user_company_ids"/>
+                        <field name="user_id" domain="['&amp;', ('share', '=', False), ('company_ids', 'in', user_company_ids)]"/>
+                        <field name="partner_id"/>
+                        <field name="team_id" domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]"/>
+                        <field name="stage_id"/>
+                    </group>
+
+                    <notebook>
+                        <page string="Customer Requests">
+                            <field name="request_ids" readonly="1">
+                                <tree>
+                                    <field name="product_id"/>
+                                    <field name="qty"/>
+                                    <field name="date"/>
+                                    <field name="description"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                    <footer>
+                        <button name="action_create_quotation" type="object" string="Create Quotation" class="oe_highlight"/>
+                    </footer>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

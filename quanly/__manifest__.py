@@ -1,0 +1,21 @@
+{
+    'name': 'quanly',
+    'version': '1.0',
+    'summary': 'Summary',
+    'description': 'Description',
+    'category': 'Category',
+    'author': 'Author',
+    'website': 'Website',
+    'license': 'LGPL-3',
+    'depends': ['crm', 'sale_management', 'product'],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/crm_customer_request_menu.xml',
+        'views/crm_customer_request_form.xml',
+        'views/crm_lead_form.xml',
+    ],
+    'demo': [],
+    'installable': True,
+    'auto_install': False,
+    'application': True,
+}
